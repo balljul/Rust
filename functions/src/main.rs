@@ -14,6 +14,7 @@ fn test_function(number: u32, multiplier: u32) -> u32  {
 }
 
 // Last section was 3.3.Parameters
+
 // Notes for me:
 // Statements are actions that perform an aciton and don´t return a value
 // Expressions are actions that end in an returned value
