@@ -21,7 +21,7 @@ fn _loop_testing() {
 
 }
 
-fn main() {
+fn _loop_labels() {
 
     'capital_loop: loop { 
         let kapitel = 3;
@@ -38,6 +38,21 @@ fn main() {
     }
 
 
+}
+
+fn main() {
+    let mut counter: i8 = 3;
+    
+    while counter != 0 {
+        println!("{counter}");
+        counter -= 1;
+    }
+    println!("Liftoff!");
+
+    for number in (1..=20).rev() {
+        println!("{number}");
+    }
+    println!("Liftoff!");
 }
 
 // Notes to myself:
