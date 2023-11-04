@@ -8,14 +8,16 @@ fn main() {
     }
     
     let mut counter: u16 = 0;
-    loop {
-        println!("{counter}");
-        counter = counter + 1;
-        if counter == 20 {
-            break;
+    let result: u16 = { 
+        loop {
+            counter = counter + 1;
+            println!("{counter}");
+            if counter == 20 {
+                break counter * 3;
+            }
         }
-    }
+    };
 
-    println!("Result: {counter}")
+    println!("Result: {result}")
 
 }
