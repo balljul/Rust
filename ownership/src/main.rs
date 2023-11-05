@@ -1,9 +1,11 @@
 fn main() {
 // Strings:
-let mut string_example = String::from("Hello");
-string_example.push_str(" World");
 
-println!("{}", string_example);
+    { // Varablie string_example doesnt exist
+        let mut string_example = String::from("Hello");
+        string_example.push_str(" World");
+        println!("{}", string_example);
+    } // Here the variable goes out of scope and its memory gets automaticly freed
 }
 
 // Notes to myself:
