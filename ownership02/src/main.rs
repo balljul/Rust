@@ -38,3 +38,4 @@ fn calculate_length(string: &String) -> usize {
 // Also when using references you dont transfer ownership
 // A refernce stores a reference to the pointer of the value on the stack which stores the pointer
 // to the stored data on the heap
+// The action of referencing a value is called Borrowing
