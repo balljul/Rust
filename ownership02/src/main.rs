@@ -36,4 +36,5 @@ fn calculate_length(string: &String) -> usize {
 // Notes to myself:
 // When useing a reference it is garanteed to point at a value with a specific type in the heap
 // Also when using references you dont transfer ownership
-//
+// A refernce stores a reference to the pointer of the value on the stack which stores the pointer
+// to the stored data on the heap
