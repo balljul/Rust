@@ -39,3 +39,4 @@ fn calculate_length(string: &String) -> usize {
 // A refernce stores a reference to the pointer of the value on the stack which stores the pointer
 // to the stored data on the heap
 // The action of referencing a value is called Borrowing
+// Another important factor is that you cant modify a borrowed value
