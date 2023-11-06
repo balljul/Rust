@@ -1,17 +1,20 @@
 fn main() {
-    let s = String::from("Moinsen Meister");
-    let first_word = first_word(&s);
+    let s = String::from("Bye World");
+    let word = first_word(&s[..]);
+
+    let s2 = "Hello World";
+    let second_word = first_word(&s2);
 
     let _hello = &s[0..5];
     let _hello02 = &s[..5];
-    let _world = &s[6..11];
+    let _world = &s[6..9];
 
     // println!("The first word in the following Sentence {}\nEnds at position {}", s, first_word_end);
     // println!("First Word: {}\nSecond Word: {}", hello, world);
-    println!("The first word is: {}", first_word);
+    println!("The words are: {} and {}", word, second_word);
 }
 
-fn first_word (string: &String) -> &str {
+fn first_word (string: &str) -> &str {
     let bytes = string.as_bytes();
 
     for (i, &character ) in bytes.iter().enumerate() {
@@ -42,3 +45,5 @@ fn _first_word_without_slice (string: &String) -> usize {
 // write &s[..y]; You can also ignore the ending_index if you want the reference to go to the last
 // index so for example &s[5..len] is the same as &s[5..];
 // I can also drop both values if I want to take a slice of the whole string: &s[..];
+// I used the input type of the first_word function to &str so i can take in literal strings
+// Literal strings themself are just a slice of the whole word we save in it not a string
