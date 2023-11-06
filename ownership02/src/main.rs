@@ -3,10 +3,20 @@ fn main() {
     let mut len = calculate_length(&s1);
     println!("The length of {} is {}", s1, len);
 
-    change_string(&mut s1); 
-    len = calculate_length(&s1);
+    {
+        let _r1 = &mut s1;
+    }
+    let r2 = &mut s1;
 
-    println!("The length of {} is {}", s1, len);
+    println!("{}", r2);
+}
+
+fn change_string(string: &mut String) {
+    string.push_str(" World");
+}
+
+fn calculate_length(string: &String) -> usize {
+    string.len()
 }
 
 fn _old_function() {
@@ -32,13 +42,6 @@ fn _old_calculate_length(string: String) -> (String, usize) {
     (string, length)
 }
 
-fn change_string(string: &mut String) {
-    string.push_str(" World");
-}
-
-fn calculate_length(string: &String) -> usize {
-    string.len()
-}
 
 // Notes to myself:
 // When useing a reference it is garanteed to point at a value with a specific type in the heap
