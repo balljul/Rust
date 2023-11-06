@@ -1,3 +1,5 @@
+struct AlwaysEqual;
+
 struct Color(i32, i32, i32); // This is a Tuple struct and it cannot be accessed with . but it can
                              // be destroyed like a tuple
 
@@ -22,6 +24,7 @@ fn main() {
     };
 
     let _black = Color(0, 0, 0);
+    let _subject = AlwaysEqual;
     println!("The data of user01:\nActive: {}\nUsername: {}\nEmail: {}\nsign_in_count: {}", user01.active, user01.username, user01.email, user01.sign_in_count);
     println!("The data of user01:\nActive: {}\nUsername: {}\nEmail: {}\nsign_in_count: {}", user02.active, user02.username, user02.email, user02.sign_in_count);
 }
