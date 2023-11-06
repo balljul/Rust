@@ -19,6 +19,7 @@ fn main() {
         "The instance looks like this: \n{:#?}",
         rect01
         );
+    dbg!(rect01);
 }
 
 fn area(rectangle: &Rectangle) -> u32 {
