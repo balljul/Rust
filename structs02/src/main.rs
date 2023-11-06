@@ -5,10 +5,12 @@ struct Rectangle {
 }
 
 fn main() {
+    let scale: u32 = 2;
     let rect01 = Rectangle {
-        width: 30,
+        width: dbg!(30 * scale),
         height: 40,
     };
+    dbg!(rect01);
 
     println!(
         "The are of the width is: {}",
@@ -19,7 +21,6 @@ fn main() {
         "The instance looks like this: \n{:#?}",
         rect01
         );
-    dbg!(rect01);
 }
 
 fn area(rectangle: &Rectangle) -> u32 {
