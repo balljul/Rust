@@ -51,3 +51,4 @@ fn _old_calculate_len(string: String) -> (String, usize) {
 // The action of referencing a value is called Borrowing
 // Another important factor is that, by default, you cant modify a borrowed value
 // We can modify a borrowed value by adding mut
+// At any point rust allows either one mutable reference or multiple immutable references
