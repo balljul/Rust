@@ -1,6 +1,10 @@
 fn main() {
-    let s1 = String::from("Hello World");
-    let len = calculate_length(&s1);
+    let mut s1 = String::from("Hello");
+    let mut len = calculate_length(&s1);
+    println!("The length of {} is {}", s1, len);
+
+    change_string(&mut s1); 
+    len = calculate_length(&s1);
 
     println!("The length of {} is {}", s1, len);
 }
@@ -28,6 +32,9 @@ fn _old_calculate_length(string: String) -> (String, usize) {
     (string, length)
 }
 
+fn change_string(string: &mut String) {
+    string.push_str(" World");
+}
 
 fn calculate_length(string: &String) -> usize {
     string.len()
@@ -39,4 +46,5 @@ fn calculate_length(string: &String) -> usize {
 // A refernce stores a reference to the pointer of the value on the stack which stores the pointer
 // to the stored data on the heap
 // The action of referencing a value is called Borrowing
-// Another important factor is that you cant modify a borrowed value
+// Another important factor is that, by default, you cant modify a borrowed value
+// We can modify a borrowed value by adding mut
