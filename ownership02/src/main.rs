@@ -1,6 +1,6 @@
 fn main() {
     let mut s1 = String::from("Hello");
-    let mut len = calculate_length(&s1);
+    let len = calculate_length(&s1);
     println!("The length of {} is {}", s1, len);
 
     {
@@ -11,7 +11,7 @@ fn main() {
     println!("{}", r2);
 }
 
-fn change_string(string: &mut String) {
+fn _change_string(string: &mut String) {
     string.push_str(" World");
 }
 
@@ -36,7 +36,7 @@ fn _give_and_take_ownership(string: String) -> String {
     string
 }
 
-fn _old_calculate_length(string: String) -> (String, usize) {
+fn _old_calculate_len(string: String) -> (String, usize) {
     let length = string.len();
 
     (string, length)
