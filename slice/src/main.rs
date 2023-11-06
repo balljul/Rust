@@ -1,9 +1,9 @@
-fn main() {
+fn _old_ma_in() {
     let s = String::from("Bye World");
-    let word = first_word(&s[..]);
+    let word = _first_word(&s[..]);
 
     let s2 = "Hello World";
-    let second_word = first_word(&s2);
+    let second_word = _first_word(&s2);
 
     let _hello = &s[0..5];
     let _hello02 = &s[..5];
@@ -14,7 +14,7 @@ fn main() {
     println!("The words are: {} and {}", word, second_word);
 }
 
-fn first_word (string: &str) -> &str {
+fn _first_word (string: &str) -> &str {
     let bytes = string.as_bytes();
 
     for (i, &character ) in bytes.iter().enumerate() {
@@ -37,6 +37,14 @@ fn _first_word_without_slice (string: &String) -> usize {
     string.len()
 }
 
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    
+    let slice = &a[1..3];
+
+    assert_eq!(slice, &[2, 3]);
+
+}
 // Notes to myself:
 // When I use the first_word method the value isn´t bound to variable.
 // If i get back the value 5 and change the string it will introduce a wrong result
