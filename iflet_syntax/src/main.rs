@@ -4,4 +4,7 @@ fn main() {
     if let Some(max) = config_max {
         println!("The max is {}", max);
     }
+    else {
+        println!("Else");
+    }
 }
