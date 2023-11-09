@@ -1,3 +1,5 @@
+use restaurant::front_of_house
+
 fn main() {
     let config_max = Some(15u8);
 
@@ -5,6 +7,6 @@ fn main() {
         println!("The max is {}", max);
     }
     else {
-        println!("Else");
+        println!("else");
     }
 }
