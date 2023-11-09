@@ -4,10 +4,10 @@ fn main() {
         7 => println!("Got a seven"),
         2 => println!("Got a two"),
         // other => reroll(other),
-        _ => reroll(0),
+        _ => (),
     }
 
-    fn reroll(last_number: u8) {
+    fn _reroll(last_number: u8) {
         println!("Rolled the number {}", last_number)
     }
 }
