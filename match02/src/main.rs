@@ -11,3 +11,8 @@ fn main() {
         println!("Rolled the number {}", last_number)
     }
 }
+
+// Notes to myself:
+// In the match expression the catch all arm catches all options we didnt cover
+// other: with other I have to use the value
+// _: with _ I dont have to use the value
