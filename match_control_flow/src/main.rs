@@ -1,3 +1,4 @@
+#[derive(Debug)]
 enum Coin {
     OCENT,
     TCENT,
@@ -5,7 +6,7 @@ enum Coin {
     EURO,
 }
 
-fn value_in_cents(coin: Coin) -> u8 {
+fn value_in_cents(coin: &Coin) -> u8 {
     match coin {
         Coin::OCENT => {
             println!("You paid a singular cent");
@@ -19,5 +20,6 @@ fn value_in_cents(coin: Coin) -> u8 {
 
 fn main() {
     let payment = Coin::OCENT;
-    println!("You payd {} cents", value_in_cents(payment));
+    println!("You payd {} cents", value_in_cents(&payment));
+    dbg!(payment);
 }
