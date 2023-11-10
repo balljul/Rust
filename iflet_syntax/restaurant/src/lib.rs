@@ -38,18 +38,21 @@ mod back_of_house {
     }
 }
 
-use back_of_house::Breakfast;
-use back_of_house::Appetizer;
 
-#[allow(unused)]
-pub fn eat_at_restaurant() {
-    front_of_house::hosting::add_to_waitlist();
+mod customer {
+    use crate::back_of_house::Breakfast;
+    use crate::back_of_house::Appetizer;
 
-    let toast = String::from("tast");
+    #[allow(unused)]
+    pub fn eat_at_restaurant() {
+        crate::front_of_house::hosting::add_to_waitlist();
 
-    let mut my_toast = Breakfast::summer(&toast);
-    let mut enum_test = Appetizer::Option01;
-    my_toast.toast = String::from("asdf");
-    // my_toast.seasonal_food = String::from("invalid");
+        let toast = String::from("tast");
 
+        let mut my_toast = Breakfast::summer(&toast);
+        let mut enum_test = Appetizer::Option01;
+        my_toast.toast = String::from("asdf");
+        // my_toast.seasonal_food = String::from("invalid");
+
+    }
 }
