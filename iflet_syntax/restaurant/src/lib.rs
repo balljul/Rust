@@ -6,6 +6,7 @@ mod front_of_house {
         fn seat_at_tabl() {}
     }
 
+
     #[allow(unused)]
     mod serving {
         fn take_order() {}
