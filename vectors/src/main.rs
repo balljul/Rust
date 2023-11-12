@@ -1,6 +1,6 @@
 #[allow(unused)]
 fn main() {
-    let mut v: Vec<i32> = Vec::new();
+    let mut v = vec![];
 
     v.push(3);
     v.push(124);
