@@ -1,5 +1,25 @@
 #[allow(unused)]
 fn main() {
+    #[derive(Debug)]
+    enum Cell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        Cell::Int(243),
+        Cell::Float(27.2833),
+        Cell::Text(String::from("Some random string")),
+    ];
+
+    dbg!(&row);
+
+}
+
+#[allow(unused)]
+fn vectors() {
+
     let mut v = vec![];
 
     for num in (1..=12) {
@@ -26,5 +46,5 @@ fn main() {
         Some(value) => println!("The 100th value is: {}", value),
         None => println!("There is no 100th value"),
     }
-
+    
 }
