@@ -6,9 +6,11 @@ fn main() {
         v.push(num);
     }
 
-    for item in &v {
-        println!("{item}");
+    for item in &mut v {
+        *item += 50;
     }
+    
+    dbg!(&v);
     
     let third: &i32 = &v[2];
     println!("Third item is: {}", third);
