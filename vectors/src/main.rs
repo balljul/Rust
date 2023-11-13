@@ -2,7 +2,7 @@
 fn main() {
     let mut v = vec![];
 
-    for num in (1..=20) {
+    for num in (1..=5) {
         v.push(num);
     }
     dbg!(&v);
