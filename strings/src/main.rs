@@ -15,13 +15,17 @@ fn main() {
         let s4 = s2 + &s3; // s2 gets moved so it wont be able to be used again
     }
     
-    let s1 = String::from("REWROTE");
-    let s2 = String::from("OLD");
-    let s3 = String::from("BACKEND!!!");
+    {
+        let s1 = String::from("REWROTE");
+        let s2 = String::from("OLD");
+        let s3 = String::from("BACKEND!!!");
 
-    let s = format!("{} {} {}", s1, s2, s3);
+        let s = format!("{} {} {}", s1, s2, s3);
+    }
 
-    dbg!(&s);
+    let s = String::from("Hello World");
+    let h = &s[0..1];
+    dbg!(h);
 
 }
 
