@@ -1,6 +1,15 @@
 #[allow(unused)]
 fn main() {
+    let mut s = String::from("Initial ");
+    s.push_str("Commit");
+
+    assert_eq!(s, "Initial Commit", "Message One does not equal Message two!");
+
+    dbg!(&s);
 }
+
+#[allow(unused)]
+fn updating_string() {}
 
 #[allow(unused)]
 fn string_basics() {
