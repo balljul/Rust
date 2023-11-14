@@ -7,11 +7,13 @@ fn main() {
         Text(String),
     }
 
-    let row = vec![
+    let mut row = vec![
         Cell::Int(243),
         Cell::Float(27.2833),
         Cell::Text(String::from("Some random string")),
     ];
+
+    row.push(Cell::Int(99137));
 
     dbg!(&row);
 
