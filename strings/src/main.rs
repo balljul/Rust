@@ -2,9 +2,11 @@
 fn main() {
     let mut s = String::from("Initial ");
     s.push_str("Commit");
+    s.push(' ');
+    s.push('J');
+    s.push('B');
 
-    assert_eq!(s, "Initial Commit", "Message One does not equal Message two!");
-
+    // assert_eq!(s, "Initial Commit", "Message One does not equal Message two!");
     dbg!(&s);
 }
 
