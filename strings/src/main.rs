@@ -23,9 +23,16 @@ fn main() {
         let s = format!("{} {} {}", s1, s2, s3);
     }
 
-    let s = String::from("Hello World");
-    let h = &s[0..1];
+    let s = String::from("Здравствуйте Hello World");
+    let h = &s[0..4];
     dbg!(h);
+
+    for char in s.chars() {
+        println!("{}", char);
+    }
+    for byte in s.bytes() {
+        println!("{}", byte); 
+    }
 
 }
 
