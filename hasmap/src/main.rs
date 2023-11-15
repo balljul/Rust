@@ -1,6 +1,7 @@
 fn main() {
     use std::collections::HashMap;
-        
+    
+    { 
     let mut hmap: HashMap<String, i32> = HashMap::new();
 
     hmap.insert(String::from("test"), 255);
@@ -8,6 +9,15 @@ fn main() {
 
     hmap.entry(String::from("KAC")).or_insert(700);
     hmap.entry(String::from("KAC")).or_insert(900);
+    }
+
+    let mut hmap = HashMap::new();
+    let words = String::from("This is just sequence of random words and letters which could be: f a a sj dk k d v u d");
+
+    for word in words.split_whitespace() {
+        let count = hmap.entry(word).or_insert(0); 
+        *count += 1;
+    }
 
     dbg!(&hmap);
 }
