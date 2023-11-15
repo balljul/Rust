@@ -1,6 +1,21 @@
 fn main() {
     use std::collections::HashMap;
-    
+        
+    let mut hmap: HashMap<String, i32> = HashMap::new();
+
+    hmap.insert(String::from("test"), 255);
+    hmap.insert(String::from("test"), 124);
+
+    hmap.entry(String::from("KAC")).or_insert(700);
+    hmap.entry(String::from("KAC")).or_insert(900);
+
+    dbg!(&hmap);
+}
+
+#[allow(unused)]
+fn hasmaps_test() {
+
+    use std::collections::HashMap;
     let mut scores = HashMap::new();
 
     let score_kac: i32 = 99;
@@ -20,5 +35,4 @@ fn main() {
         Option::Some(value) => println!("KAC has {} points this season", value),
         Option::None => println!("KAC doesnt have a valid entry"),
     }
-
 }
