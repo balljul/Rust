@@ -1,30 +1,48 @@
 use std::{fs::File, io::ErrorKind};
 
-#[allow(unused)]
 fn main() {
-    result_test();
+    result_test_without_match();
 }
 
 #[allow(unused)]
 fn result_test() {
     let file_result = File::open("text.txt");
 
-    let file = match file_result {
+    let file = {
+        match file_result {
         Ok(file) => {
-            println!("File exists");
             file
         },
         Err(error) => {
-            println!("File doesnt exist. It will be created now");
             match error.kind() {
                 ErrorKind::NotFound => match File::create("text.txt") {
                     Ok(fc) => fc,
-                    Err(error) => panic!("Following error occured: {}",error),
+                    Err(error) => panic!("Following error occured when creating the file: {}",error),
                 },
-                other_error => panic!("Following error occured: {}", other_error),
+                other_error => panic!("Following error occured when trying to open the file: {}", other_error),
             } 
         }
+        } 
     };
     
+    dbg!(file);
+}
 
+#[allow(unused)]
+fn result_test_without_match() {
+    let file_result = File::open("text.txt");
+
+    let file = {
+        File::open("text.txt").unwrap_or_else(|error| {
+            if error.kind() == ErrorKind::NotFound {
+                File::create("text.txt").unwrap_or_else(|error| {
+                    panic!("Error trying to create file: {}", error)
+                })
+            }
+            else {
+                panic!("Error occured when trying to open the file: {}", error);
+            }
+        })
+    };
+    
 }
