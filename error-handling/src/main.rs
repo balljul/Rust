@@ -1,17 +1,23 @@
-use std::{fs::File, io::{self, ErrorKind, Read}};
+use std::{fs::{self, File}, io::{self, ErrorKind}};
 
 #[allow(unused)]
 fn main() {
-    let user = read_user_from_file();
-    dbg!(&user);
+    dbg!(last_char_of_first_line("JAJAJAA\nNeineNeinenin"));
+    dbg!(last_char_of_first_line(""));
+}
+
+#[allow(unused)]
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()  
 }
 
 #[allow(unused)]
 fn read_user_from_file() -> Result<String, io::Error> {
-    let mut username = String::new();
-    File::open("username.txt")?.read_to_string(&mut username)?;
+//    let mut username = String::new();
+//    File::open("username.txt")?.read_to_string(&mut username)?;
+//    Ok(username)
 
-    Ok(username)
+    fs::read_to_string("username.txt") 
 }
 
 #[allow(unused)]
