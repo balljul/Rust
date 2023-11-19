@@ -1,7 +1,8 @@
 use std::{fs::File, io::ErrorKind};
 
+#[allow(unused)]
 fn main() {
-    result_test_without_match();
+    let file = File::open("text.txt").unwrap();
 }
 
 #[allow(unused)]
@@ -24,12 +25,11 @@ fn result_test() {
         }
         } 
     };
-    
     dbg!(file);
 }
 
 #[allow(unused)]
-fn result_test_without_match() {
+fn result_test_without_match() -> File {
     let file_result = File::open("text.txt");
 
     let file = {
@@ -44,5 +44,6 @@ fn result_test_without_match() {
             }
         })
     };
-    
+
+    file    
 }
