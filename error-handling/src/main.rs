@@ -1,9 +1,13 @@
-use std::{fs::{self, File}, io::{self, ErrorKind}};
+use std::io::{self, ErrorKind};
+use std::fs::{self, File};
+use std::error::Error;
+
 
 #[allow(unused)]
-fn main() {
-    dbg!(last_char_of_first_line("JAJAJAA\nNeineNeinenin"));
-    dbg!(last_char_of_first_line(""));
+fn main() -> Result<(), Box<dyn Error>> {
+   let file = File::open("username.txt");
+
+   Ok(())
 }
 
 #[allow(unused)]
