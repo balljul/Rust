@@ -2,7 +2,10 @@ use std::{fs::File, io::ErrorKind};
 
 #[allow(unused)]
 fn main() {
-    let file = File::open("text.txt").unwrap();
+//    let file = File::open("text.txt").unwrap();
+    let file = File::open("text.txt")
+        .expect("Some error occured");
+
 }
 
 #[allow(unused)]
