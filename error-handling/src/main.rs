@@ -1,13 +1,11 @@
 use std::io::{self, ErrorKind};
 use std::fs::{self, File};
-use std::error::Error;
+//use std::error::Error;
 
 
 #[allow(unused)]
-fn main() -> Result<(), Box<dyn Error>> {
-   let file = File::open("username.txt");
-
-   Ok(())
+fn main() {
+    last_char_of_first_line("Hall oa aslkfjh sdlf");
 }
 
 #[allow(unused)]
