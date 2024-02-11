@@ -1,63 +1,20 @@
 #[derive(Debug)]
-#[allow(unused)]
-// tuple structs
-struct Color(i32,i32,i32);
+struct IpV4(u8,u8,u8,u8);
 
 #[derive(Debug)]
-#[allow(unused)]
-// field structs
-struct User {
-    field1: bool,
-    field2: u128,
-}
+struct IpV6(String);
 
 #[derive(Debug)]
-#[allow(unused)]
-// unit-like structs
-struct AlwaysEqual;
-
-// Notes end here
-
-#[derive(Debug)]
-#[allow(unused)]
-struct Rectangle {
-    width: u32,
-    heigth: u32
+enum IpAddress {
+    V4(IpV4),
+    V6(IpV6),
 }
 
-#[allow(unused)]
-impl Rectangle {
-    fn width(&self) -> bool {
-        self.width > 0
-    }
-    fn area(&self) -> u32 {
-        self.width * self.heigth
-    }
-    fn compare(&self, other: Rectangle) -> bool {
-        self.area() > other.area()
-    }
-    fn sqaure(size: u32) -> Self {
-        Self {
-            width: size,
-            heigth: size,
-        }
-    }
-}
 
-#[allow(unused)]
 fn main() {
-    const SCALE: u32 = 2;
-    let rect1 = Rectangle {
-        width: 30 * SCALE,
-        heigth: 50,
-    };
+    let home = IpAddress::V4(IpV4(127,0,0,1));
+    let loopback = IpAddress::V6(IpV6(String::from("::01")));
 
-    let rect2 = Rectangle {
-        width: 18 * SCALE,
-        heigth: 50,
-    };
-
-    let rect3 = Rectangle::sqaure(115);
-    dbg!(&rect3);
+    dbg!(&home);
+    dbg!(&loopback);
 }
-
